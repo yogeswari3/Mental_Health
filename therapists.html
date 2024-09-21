@@ -73,12 +73,21 @@
     <footer>
         <p>© 2024 Mental Health Awareness India. All Rights Reserved.</p>
         <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
         </ul>
     </footer>
 
     <script>
+        function toggleMenu() {
+            var navLinks = document.getElementById("nav-links");
+            if (navLinks.classList.contains("open")) {
+                navLinks.classList.remove("open");
+            } else {
+                navLinks.classList.add("open");
+            }
+        }
+
         document.getElementById('search-form').onsubmit = function(event) {
             event.preventDefault();
 

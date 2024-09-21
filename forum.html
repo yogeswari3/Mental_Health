@@ -17,6 +17,7 @@
         </div>
         <nav>
             <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="self-help.html">Self-help</a></li>
                 <li><a href="forum.html">Forum</a></li>
@@ -66,12 +67,21 @@
     <footer>
         <p>© 2024 Mental Health Awareness India. All Rights Reserved.</p>
         <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
         </ul>
     </footer>
 
     <script>
+        function toggleMenu() {
+            var navLinks = document.getElementById("nav-links");
+            if (navLinks.classList.contains("open")) {
+                navLinks.classList.remove("open");
+            } else {
+                navLinks.classList.add("open");
+            }
+        }
+
         window.onload = function() {
             // Check if 'forumPosts' exists in localStorage
             let posts = JSON.parse(localStorage.getItem('forumPosts'));

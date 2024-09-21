@@ -147,7 +147,7 @@ section p {
     width: 100%;
     height: 100%;
     background: url('images/smiling.jpg') no-repeat center center/cover; /* Initial image */
-    animation: slide 50s infinite; /* Change duration as needed */
+    animation: slide 30s infinite; /* Change duration as needed */
 }
 
 @keyframes slide {
@@ -253,6 +253,18 @@ form button[type="submit"]:hover {
 #toggle-to-signup:hover,
 #toggle-to-login:hover {
     text-decoration: none; /* Remove underline on hover */
+}
+
+/* Forum Section */
+#forums a,
+#therapist-directory a{
+    text-decoration: none;
+    color: #4CAF50;
+}
+
+#forums a:hover,
+#therapist-directory a:hover{
+    text-decoration: underline;
 }
 
 /* Crisis Support Section */

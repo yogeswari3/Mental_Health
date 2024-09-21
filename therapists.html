@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mental Health Awareness India</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="handshake.png" alt="">
+            </a>
+        </div>
+        <nav>
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="self-help.html">Self-help</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="therapists.html">Therapists</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    </header> 
+
+    <section id="find-professional">
+        <h1>Find a Mental Health Professional</h1>
+        <p>Search for certified therapists across India:</p>
+        
+        <form id="search-form">
+            <!-- Search by name -->
+            <div class="form-group">
+                <label for="name">Search by Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter therapist's name">
+            </div>
+            
+            <!-- Search by location -->
+            <div class="form-group">
+                <label for="location">Search by Location:</label>
+                <input type="text" id="location" name="location" placeholder="Enter city or region">
+            </div>
+            
+            <!-- Search by specialty -->
+            <div class="form-group">
+                <label for="specialty">Search by Specialty:</label>
+                <select id="specialty" name="specialty">
+                    <option value="">Select a specialty</option>
+                    <option value="depression">Depression</option>
+                    <option value="anxiety">Anxiety</option>
+                    <option value="family">Family Therapy</option>
+                    <option value="addiction">Addiction</option>
+                    <option value="child">Child Therapy</option>
+                    <!-- Add more specialties as needed -->
+                </select>
+            </div>
+            
+            <button type="submit">Search</button>
+        </form>
+    
+        <!-- Search results container -->
+        <div id="results">
+            <!-- The search results will be dynamically populated here -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Mental Health Awareness India. All Rights Reserved.</p>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        document.getElementById('search-form').onsubmit = function(event) {
+            event.preventDefault();
+
+            // Fetch form data
+            const name = document.getElementById('name').value.toLowerCase();
+            const location = document.getElementById('location').value.toLowerCase();
+            const specialty = document.getElementById('specialty').value;
+
+            // Sample data (replace this with actual data from a database or API)
+            const therapists = [
+                { name: 'Dr. Anjali Mehta', location: 'Mumbai', specialty: 'Depression' },
+                { name: 'Dr. Vikram Patel', location: 'Delhi', specialty: 'Anxiety' },
+                { name: 'Dr. Neha Kumar', location: 'Bangalore', specialty: 'Child Therapy' },
+                { name: 'Dr. Aisha Khan', location: 'Hyderabad', specialty: 'Family Therapy' },
+                { name: 'Dr. Rajesh Singh', location: 'Pune', specialty: 'Addiction' },
+                { name: 'Dr. Priya Sharma', location: 'Kolkata', specialty: 'Stress Management' },
+                { name: 'Dr. Arvind Joshi', location: 'Chennai', specialty: 'Trauma Recovery' },
+                { name: 'Dr. Kavita Desai', location: 'Ahmedabad', specialty: 'Marriage Counseling' },
+                { name: 'Dr. Rakesh Gupta', location: 'Gurgaon', specialty: 'Cognitive Behavioral Therapy' },
+                { name: 'Dr. Sneha Nair', location: 'Thiruvananthapuram', specialty: 'Anxiety' },
+                { name: 'Dr. Manish Tandon', location: 'Lucknow', specialty: 'Depression' },
+                { name: 'Dr. Pooja Dutta', location: 'Chandigarh', specialty: 'Family Therapy' },
+                { name: 'Dr. Sameer Rao', location: 'Bhopal', specialty: 'Addiction' },
+                { name: 'Dr. Nisha Verma', location: 'Jaipur', specialty: 'Child Therapy' },
+                { name: 'Dr. Suresh Nair', location: 'Kochi', specialty: 'Trauma Recovery' },
+                { name: 'Dr. Suman Arora', location: 'Indore', specialty: 'Depression' },
+                { name: 'Dr. Abhay Kulkarni', location: 'Nagpur', specialty: 'Stress Management' },
+                { name: 'Dr. Shreya Das', location: 'Bhubaneswar', specialty: 'Marriage Counseling' },
+                { name: 'Dr. Sunil Rao', location: 'Mysore', specialty: 'Cognitive Behavioral Therapy' },
+                { name: 'Dr. Meera Iyer', location: 'Goa', specialty: 'Anxiety' },
+                { name: 'Dr. Harish Shetty', location: 'Patna', specialty: 'Depression' },
+                { name: 'Dr. Archana Bhat', location: 'Coimbatore', specialty: 'Family Therapy' },
+                { name: 'Dr. Amit Roy', location: 'Visakhapatnam', specialty: 'Addiction' },
+                { name: 'Dr. Ritu Sinha', location: 'Surat', specialty: 'Trauma Recovery' },
+                // Add more data here
+            ];
+
+            // Filter results
+            const results = therapists.filter(therapist => {
+                return (
+                    (name === '' || therapist.name.toLowerCase().includes(name)) &&
+                    (location === '' || therapist.location.toLowerCase().includes(location)) &&
+                    (specialty === '' || therapist.specialty.toLowerCase() === specialty.toLowerCase())
+                );
+            });
+
+            // Display the results
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = ''; // Clear previous results
+
+            if (results.length > 0) {
+                results.forEach(therapist => {
+                    const resultDiv = document.createElement('div');
+                    resultDiv.classList.add('result-item');
+                    resultDiv.innerHTML = `
+                        <h3>${therapist.name}</h3>
+                        <p><strong>Location:</strong> ${therapist.location}</p>
+                        <p><strong>Specialty:</strong> ${therapist.specialty}</p>
+                    `;
+                    resultsDiv.appendChild(resultDiv);
+                });
+            } else {
+                resultsDiv.innerHTML = '<p>No results found. Please try again.</p>';
+            }
+        };
+    </script>
+
+</body>
+</html>

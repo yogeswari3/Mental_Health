@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mental Health Awareness India</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="handshake.png" alt="">
+            </a>
+        </div>
+        <nav>
+            <ul id="nav-links">
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="self-help.html">Self-help</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="therapists.html">Therapists</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    </header>  
+    <section id="mood-tracker">
+        <h1>Mood Tracker</h1>
+        <p>Track your mood daily and observe patterns over time.</p>
+        
+        <form id="mood-form">
+            <label for="mood">Select Your Mood:</label>
+            <select id="mood" name="mood">
+                <option value="happy">Happy</option>
+                <option value="sad">Sad</option>
+                <option value="stressed">Stressed</option>
+                <option value="anxious">Anxious</option>
+                <option value="neutral">Neutral</option>
+            </select>
+            
+            <label for="note">Additional Notes (optional):</label>
+            <textarea id="note" name="note" placeholder="Write something about your day..."></textarea>
+            
+            <button type="submit">Submit</button>
+        </form>
+
+        <div class="mood-container">
+            <div class="mood-history-container">
+                <h2>Mood History</h2>
+                <div id="mood-history">
+                    <!-- Mood history entries will be displayed here -->
+                </div>
+            </div>
+            <div class="graph-container">
+                <h2>Mood Graph</h2>
+                <canvas id="mood-graph" width="400" height="200"></canvas>
+                <!-- <div id="mood-graph">
+                    Graph will be displayed here.
+                </div> -->
+            </div>
+        </div>
+
+        <form id="mood-history-form">
+            <button id="clear-history" type="submit">Clear History</button>
+        </form>
+    </section>
+
+    <section id="stress-management">
+        <h1>Stress Management Exercises</h1>
+        
+        <div class="exercise">
+            <h2>Deep Breathing</h2>
+            <p>Follow these steps to practice deep breathing:</p>
+            <ol>
+                <li>Sit comfortably with your back straight.</li>
+                <li>Inhale deeply through your nose for a count of 4.</li>
+                <li>Hold your breath for a count of 4.</li>
+                <li>Exhale slowly through your mouth for a count of 4.</li>
+                <li>Repeat 5 times.</li>
+            </ol>
+        </div>
+    
+        <div class="exercise">
+            <h2>Progressive Muscle Relaxation</h2>
+            <p>Follow these steps to relax your muscles:</p>
+            <ol>
+                <li>Tense your muscles, starting from your toes and working your way up to your head.</li>
+                <li>Hold the tension for 5-10 seconds.</li>
+                <li>Release the tension, feeling the relaxation spread through your body.</li>
+                <li>Repeat with each muscle group.</li>
+            </ol>
+        </div>
+        <div class="exercise">
+            <h2>Mindfulness Meditation</h2>
+            <p>Practice mindfulness by following these steps:</p>
+            <ol>
+                <li>Find a quiet place to sit comfortably.</li>
+                <li>Close your eyes and focus on your breath.</li>
+                <li>Observe your thoughts without judgment, gently bringing your focus back to your breath.</li>
+                <li>Continue for 5-10 minutes.</li>
+            </ol>
+        </div>
+    
+        <div class="exercise">
+            <h2>Guided Imagery</h2>
+            <p>Use your imagination to create a peaceful scene:</p>
+            <ol>
+                <li>Close your eyes and take a few deep breaths.</li>
+                <li>Visualize a place that brings you peace (like a beach or forest).</li>
+                <li>Engage your senses to imagine what you see, hear, smell, and feel.</li>
+                <li>Stay in this visualization for a few minutes.</li>
+            </ol>
+        </div>
+    
+        <div class="exercise">
+            <h2>Yoga or Stretching</h2>
+            <p>Incorporate gentle stretches or yoga poses into your routine:</p>
+            <ol>
+                <li>Find a quiet space and lay out a mat.</li>
+                <li>Start with simple stretches like neck rolls and shoulder shrugs.</li>
+                <li>Move into poses like Child's Pose and Cat-Cow, focusing on your breath.</li>
+                <li>Hold each pose for several breaths.</li>
+            </ol>
+        </div>
+    
+        <div class="exercise">
+            <h2>Journaling</h2>
+            <p>Use journaling as a way to express your feelings:</p>
+            <ol>
+                <li>Set aside a few minutes each day to write in a journal.</li>
+                <li>Reflect on your thoughts, feelings, and experiences.</li>
+                <li>Consider writing about things you're grateful for.</li>
+            </ol>
+        </div>
+    
+        <div class="exercise">
+            <h2>Walking or Light Exercise</h2>
+            <p>Engage in physical activity to relieve stress:</p>
+            <ol>
+                <li>Go for a brisk walk outside or around your home.</li>
+                <li>Choose a route that you enjoy or try a new path.</li>
+                <li>Focus on your surroundings and your breathing as you walk.</li>
+            </ol>
+        </div>
+    
+        <div class="exercise">
+            <h2>Aromatherapy</h2>
+            <p>Utilize scents to promote relaxation:</p>
+            <ol>
+                <li>Choose essential oils that you find calming (like lavender or chamomile).</li>
+                <li>Use a diffuser or apply a small amount to your wrists.</li>
+                <li>Breathe deeply to enjoy the soothing scent.</li>
+            </ol>
+        </div>
+    
+        <div class="exercise">
+            <h2>Time in Nature</h2>
+            <p>Reconnect with nature for stress relief:</p>
+            <ol>
+                <li>Spend time outdoors, whether in a park or your backyard.</li>
+                <li>Take a moment to observe the trees, flowers, and sounds of nature.</li>
+                <li>Practice being present and appreciating the environment around you.</li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="guided-meditation">
+        <h1>Guided Meditation</h1>
+        <p>Relax and meditate with our guided sessions.</p>
+        
+        <div class="meditation">
+            <h2>Morning Relaxation</h2>
+            <audio controls>
+                <source src="audios/morning-relaxing-144011.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        
+        <div class="meditation">
+            <h2>Sleep Meditation</h2>
+            <audio controls>
+                <source src="audios/rain-in-the-paradise-forest-yoga-zen-relaxation-positive-sleep-music-140636.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </section>    
+    
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Mental Health Awareness India. All Rights Reserved.</p>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </footer>
+
+    <!-- JavaScript for toggling the dropdown menu -->
+    <script>
+        function toggleMenu() {
+            var navLinks = document.getElementById("nav-links");
+            if (navLinks.classList.contains("open")) {
+                navLinks.classList.remove("open");
+            } else {
+                navLinks.classList.add("open");
+            }
+        }
+
+        document.getElementById('mood-form').onsubmit = function(event) {
+            event.preventDefault();
+            const mood = document.getElementById('mood').value;
+            const note = document.getElementById('note').value;
+            const date = new Date().toLocaleDateString();
+
+            let moodHistory = JSON.parse(localStorage.getItem('moodHistory')) || [];
+            moodHistory.push({ date, mood, note });
+            localStorage.setItem('moodHistory', JSON.stringify(moodHistory));
+
+            displayMoodHistory();
+            updateMoodGraph();
+        }
+
+        document.getElementById('clear-history').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            localStorage.setItem('moodHistory', JSON.stringify([])); // Set moodHistory to an empty array
+            document.getElementById('mood-history').innerHTML = 'No History'; // Clear the displayed mood history
+            updateMoodGraph();
+        });
+
+        function displayMoodHistory() {
+            let moodHistory = JSON.parse(localStorage.getItem('moodHistory')) || [];
+            let moodHistoryDiv = document.getElementById('mood-history');
+            moodHistoryDiv.innerHTML = '';
+
+            // Check if moodHistory is null
+            if (moodHistory.length === 0) {
+                moodHistoryDiv.innerHTML = "No History";
+            } else {
+                moodHistory.forEach(entry => {
+                moodHistoryDiv.innerHTML += `<p><strong>${entry.date}:</strong> ${entry.mood} - ${entry.note}</p>`;
+            });
+            }
+        }
+
+        // Function to update the mood graph
+        function updateMoodGraph() {
+            let moodHistory = JSON.parse(localStorage.getItem('moodHistory')) || [];
+            const moodCounts = { happy: 0, sad: 0, stressed: 0, anxious: 0, neutral: 0 };
+
+            moodHistory.forEach(entry => {
+                moodCounts[entry.mood]++;
+            });
+
+            const labels = Object.keys(moodCounts);
+            const data = Object.values(moodCounts);
+
+            const ctx = document.getElementById('mood-graph').getContext('2d');
+            if (window.moodChart) {
+                window.moodChart.destroy(); // Destroy previous chart instance
+            }
+            window.moodChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Mood Count',
+                        data: data,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        fill: true,
+                        tension: 0.1,
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Count'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Mood'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Call displayMoodHistory on page load
+        displayMoodHistory();
+        updateMoodGraph();
+
+    </script>     
+
+</body>
+</html>
+

@@ -1,0 +1,978 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+p {
+    color: #555;
+}
+
+/* General Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #ddd;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* Section Styles */
+section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1000px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+section h2 {
+    margin-top: 0;
+    color: #4CAF50;
+}
+
+section p {
+    margin: 10px 0;
+}
+
+/* Home Section with Full-Screen Background Image */
+.hero {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay to enhance readability */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.hero-content {
+    text-align: center;
+    color: #fff;
+    max-width: 800px;
+    padding: 20px;
+    animation: fadeInUp 2s ease-in-out; /* Fade-in animation */
+    z-index: 2;
+}
+
+.hero h1 {
+    color: #4CAF50;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: slideInFromLeft 1.5s ease-in-out;
+}
+
+.hero p {
+    color: #4CAF50;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    animation: slideInFromRight 1.5s ease-in-out;
+}
+
+.cta-button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #45a049;
+}
+
+.background-slides {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/smiling.jpg') no-repeat center center/cover; /* Initial image */
+    animation: slide 50s infinite; /* Change duration as needed */
+}
+
+@keyframes slide {
+    0% { background-image: url('images/beach.jpg'); }
+    10% { background-image: url('images/anxiety.jpg'); }
+    20% { background-image: url('images/community.jpg'); }
+    30% { background-image: url('images/man-battling-mental-health.jpg'); }
+    40% { background-image: url('images/protest.jpg'); }
+    50% { background-image: url('images/cyclists.jpg'); }
+    60% { background-image: url('images/woman-comforting.jpg'); }
+    70% { background-image: url('images/woman-crying.jpg'); }
+    80% { background-image: url('images/ptsd.jpg'); }
+    90% { background-image: url('images/self-love.jpg'); }
+    100% { background-image: url('images/smiling.jpg'); } /* Loop back to the first image */
+}
+
+/* Articles Section */
+.articles {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.articles article {
+    width: 45%;
+    background-color: #e9f5e9;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.articles article h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+/* Auth Section Styles */
+#auth {
+    padding: 20px;
+    margin: 20px auto;
+    max-width:50%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+#auth img {
+    height: 80px;
+    width: 80px;
+}
+
+#auth h2 {
+    color: #4CAF50;
+}
+
+form {
+    margin: 20px 0;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+form input[type="email"],
+form input[type="password"],
+form input[type="text"] {
+    display: block;
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    /* width: 100%; Make button full width */
+}
+
+form button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+#toggle-to-signup,
+#toggle-to-login {
+    background: none;
+    border: none;
+    color: #4CAF50;
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#toggle-to-signup:hover,
+#toggle-to-login:hover {
+    text-decoration: none; /* Remove underline on hover */
+}
+
+/* Crisis Support Section */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+ul li strong {
+    font-weight: bold;
+}
+
+ul li a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+footer ul li {
+    margin: 0 10px;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Help Others Section Styles */
+.help-others-title{
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #4CAF50;
+}
+
+.help-others-acquaintance-struggling {
+    height: auto;
+}
+
+.help-others-row-one, .help-others-row-two, .help-others-row-three, .help-others-row-four {
+    height: auto;
+    display: flex;
+}
+
+.help-others-portion-left {
+    float: left;
+    width: 50%;
+    text-align: center;
+    margin-bottom: 20px;
+    overflow: auto;
+}
+
+.help-others-portion-right {
+    float: right;
+    width: 50%;
+    text-align: center;
+    margin-bottom: 20px;
+    overflow: auto;
+}
+
+.portion-img {
+    overflow: hidden;
+    display: flex; /* display:flex and align-items:center used to vertically align images into the center of the container */
+    align-items: center;
+    justify-content: center;
+    height: auto;
+}
+
+.portion-img img {
+    width: 75%;
+}
+
+.portion-heading {
+    font-size: 24px;
+    font-weight: 600;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 16px;
+    padding-bottom: 32px;
+    height: auto;
+}
+
+.portion-body {
+    font-size: 16px;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    overflow: hidden; /* change the height settings for .portion-body, .portion-heading and 
+    .help-others-portion-left & -right in other screen sizes*/
+}
+
+.help-others-tips div {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 32px;
+    text-align: center;
+    font-weight: 600;
+    padding-bottom: 40px;
+}
+
+/* contact section */
+#help-yourself-suicide-hotlines {
+    background-color: #030303;
+    opacity: 0.75;
+    color: white;
+    padding-bottom: 100px;
+}
+
+#help-yourself-suicide-hotlines .main-header {
+    padding: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #4CAF50;
+    text-align:  center;
+}
+
+.suicide-hotlines-body {
+    height: 500px;
+    width: 67%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    overflow-y: scroll;
+    border: 5px solid #4CAF50;
+    padding-bottom: 62px;
+}
+
+.suicide-hotlines-title {
+    font-size: 24px;
+    padding-top: 62px;
+    color: #4CAF50;
+    font-weight: 600;
+}
+
+.suicide-hotlines-country {
+    color: #ffffff;
+    font-size: 24px;
+    padding-top: 62px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.suicide-hotlines-organization {
+    color:  #ffffff; 
+    padding-top: 40px;
+    padding-bottom: 5px;
+    font-size: 16px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.suicide-hotlines-link {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+}
+
+.suicide-hotlines-link a {
+    text-decoration: none;
+    padding-top: 5px;
+    font-size: 16px; 
+    word-wrap: break-word; 
+    color: #4CAF50;
+}
+
+.suicide-hotlines-phone, .suicide-hotlines-email {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+}
+
+.suicide-hotlines-phone a, .suicide-hotlines-email a {
+    font-size: 16px;
+    color: #ffffff;
+    padding-top: 5px;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.spread-the-word-full-image-white-to-black {
+    background: linear-gradient(#f4f4f4 50%, #030303 50%);
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    max-width: 100vw;
+    border-radius: 0px;
+}
+
+.spread-the-word-full-image-white-to-black img {
+    width: 85%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5%;
+}
+
+.suicide-prevention {
+    margin: 0;
+    padding: 0;
+    max-width: 100vw;
+    border-radius: 0;
+    padding-top: 62px;
+    padding-bottom: 124px;
+    background-color: #030303;
+}
+
+.suicide-prevention-week {
+    text-align: center;
+}
+
+.suicide-week-heading {
+    font-size: 40px;
+    font-weight: 500;
+    color: #FF6347;
+    width: 67%;
+    padding-top: 62px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.suicide-week-body {
+    font-size: 24px;
+    font-weight: 400;
+    color: #ffffff;
+    width: 50%;
+    padding-top: 62px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#help-yourself-resources {
+    text-align: center;
+}
+
+.help-yourself-resources-videos {
+    margin-top: -32px;
+    padding-bottom: 96px;
+}
+
+.help-yourself-resources-videos iframe {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 2%;
+    margin-top: 96px;
+}
+
+.help-yourself-resources-videos iframe {
+    width: 67%;
+    height: 480px;
+    border: none;
+}
+
+.help-yourself-resources-links {
+    padding-top: 30px;
+}
+
+.help-yourself-resources-links a {
+    display: block;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 24px;
+    color: #49A4D5;
+    padding-bottom: 62px;
+    text-align: center;
+}
+
+.help-yourself-resources-links a:hover {
+    text-decoration: none;
+    color: #49A4D5;
+}
+
+.help-yourself-resources-links .fa-angle-right {
+    color: #49A4D5; /* the color of the icon should match the color of the text */
+}
+
+#mood-tracker h1,
+#stress-management h1,
+#guided-meditation h1{
+    color: #4CAF50;
+}
+
+#mood-tracker h2,
+#stress-management h2,
+#guided-meditation h2{
+    color: black;
+}
+
+/* Form styling */
+#mood-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 25%;
+}
+
+#mood-form label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+#mood-form select, 
+#mood-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#mood-form select:focus, 
+#mood-form textarea:focus {
+    border-color: #4CAF50; /* Green border on focus */
+}
+
+/* Button styling */
+#mood-form button {
+    background-color: #4CAF50; /* Green button */
+    color: #fff;
+    padding: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#mood-form button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.mood-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 70px;
+}
+
+.mood-history-container {
+    width: 45%; /* Adjust as needed */
+    background-color: #fff;
+}
+
+/* Mood History section */
+#mood-history {
+    margin-top: 30px;
+    padding: 10px;
+    background-color: #e8f5e9; /* Light green background */
+    border-radius: 10px;
+}
+
+.graph-container {
+    width: 48%; /* Adjust as needed */
+    background-color: #fff;
+}
+
+#mood-graph {
+    margin-top: 30px;
+    padding: 10px;
+    background-color: #e8f5e9;
+    border-radius: 10px;
+}
+
+#mood-tracker #mood-history-form{
+    margin: 20px 25%;
+    width: 50%;
+}
+
+#mood-tracker button{
+    width: 100%;
+    background-color: #4CAF50; /* Green button */
+    color: #fff;
+    padding: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#peer-support-forum {
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.forum-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.discussion-section, .post-form-section {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.post {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+}
+
+.post h3 {
+    margin: 0;
+}
+
+.post small {
+    color: #888;
+}
+
+.post-form-section label {
+    display: block;
+    margin: 5px;
+}
+
+#post-form-section input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#post-form-section button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#post-form-section button:hover {
+    background-color: #45a049;
+}
+
+#find-professional {
+    /* width: 100%;
+    max-width: 900px; */
+    margin: 20px auto;
+    padding: 20px;
+}
+
+#find-professional h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#find-professional p {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+#search-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form-group {
+    width: 48%;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#search-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#search-form button:hover {
+    background-color: #45a049;
+}
+
+/* Search results styling */
+#results {
+    margin-top: 30px;
+}
+
+.result-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.result-item h3 {
+    margin: 0;
+}
+
+.result-item p {
+    margin: 5px 0;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Hide the main navigation initially */
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Adjust to position the dropdown correctly */
+        right: 0;
+        background-color: #4CAF50;
+        width: 100%;
+    }
+
+    header nav ul {
+        z-index: 10; /* Higher z-index for the dropdown */
+        position: absolute; /* Ensure it positions correctly */
+        top: 60px; /* Adjust as needed */
+        right: 0;
+        background-color: #4CAF50; /* Ensure dropdown background is visible */
+    }
+
+    /* Show hamburger icon on small screens */
+    .hamburger {
+        display: block;
+    }
+
+    /* When the nav is open, show the links vertically */
+    header nav ul.open {
+        display: flex;
+    }
+
+    /* Stack the menu items */
+    header nav ul li {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .hero {
+        position: relative; /* Ensure home section has positioning */
+        z-index: 1; /* Lower z-index for home section */
+    }
+
+    #auth {
+        max-width:95%;
+    }
+
+    form input[type="email"],
+    form input[type="password"] {
+        width: 90%;
+    }
+
+    .articles {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    .articles article {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .help-others-title{
+        box-shadow: none;
+        font-size: 24px;
+        text-transform: uppercase;
+    }
+
+    .help-others-row-one, .help-others-row-two, .help-others-row-three, .help-others-row-four {
+        flex-direction: column;
+    }
+
+    .help-others-portion-left,
+    .help-others-portion-right{
+        width: 100%;
+    }
+
+    .portion-heading {
+        font-size: 16px;
+    }
+
+    .help-others-tips div {
+        font-size: 16px;
+    }
+
+    .help-yourself-resources-links a{
+        font-size: 16px;
+    }
+
+    .help-yourself-resources-videos iframe {
+        width: 67%;
+        height: 250px;
+        border: none;
+    }
+
+    #mood-form {
+        margin: 10px 10%;
+    }
+
+    .mood-container {
+        flex-direction: column;
+    }
+
+    .mood-history-container,
+    .graph-container {
+        width: 95%; /* Adjust as needed */
+    }
+    
+    #mood-tracker #mood-history-form{
+        margin: 10px 10%;
+        width: 80%;
+    }
+
+    #mood-tracker #mood-history-form button{
+        width: 100%;
+    }
+
+    .forum-container {
+        flex-direction: column; /* Side by side on larger screens */
+    }
+
+    .form-group {
+        width: 100%;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

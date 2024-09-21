@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mental Health Awareness India</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="handshake.png" alt="">
+            </a>
+        </div>
+        <nav>
+            <ul id="nav-links">
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="self-help.html">Self-help</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="therapists.html">Therapists</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    </header> 
+
+    <section id="peer-support-forum">
+        <h1>Peer Support Forum</h1>
+        <p>Join our community forum to share your experiences and receive support from others:</p>
+        
+        <div class="forum-container">
+            <div class="discussion-section">
+                <h2>Join the Discussion</h2>
+                <div id="forum-posts">
+                    <!-- Example post -->
+                    <!-- <div class="post">
+                        <h3>Sarah</h3>
+                        <p>I felt disgusted every time I looked in the mirror. I stayed away from people as much as I could, and felt I made an embarrassment of myself whenever I went out in public</p>
+                        <small>Posted on: 2023-09-21</small>
+                    </div> -->
+                    <!-- More posts will be dynamically added here -->
+                </div>
+            </div>
+    
+            <div class="post-form-section">
+                <h2>Share Your Experience</h2>
+                <form id="post-form">
+                    <label for="username">Your Name:</label>
+                    <input type="text" id="username" name="username" required>
+    
+                    <label for="post-content">Your Post:</label>
+                    <textarea id="post-content" name="post-content" placeholder="Write your thoughts here..." required></textarea>
+    
+                    <button type="submit">Post</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Mental Health Awareness India. All Rights Reserved.</p>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        window.onload = function() {
+            // Check if 'forumPosts' exists in localStorage
+            let posts = JSON.parse(localStorage.getItem('forumPosts'));
+
+            // If no posts exist, set a default post
+            if (!posts || posts.length === 0) {
+                posts = [
+                    {
+                        username: 'Sarah',
+                        content: 'I felt disgusted every time I looked in the mirror. I stayed away from people as much as I could, and felt I made an embarrassment of myself whenever I went out in public',
+                        date: 'Posted on: 2023-09-21'
+                    }
+                ];
+                localStorage.setItem('forumPosts', JSON.stringify(posts));
+            }
+            displayPosts();
+        };
+
+        document.getElementById('post-form').onsubmit = function(event) {
+            event.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const content = document.getElementById('post-content').value;
+            const date = new Date().toLocaleString();
+
+            // Get existing posts from localStorage or initialize an empty array
+            let posts = JSON.parse(localStorage.getItem('forumPosts')) || [];
+            
+            // Create a new post object
+            const newPost = {
+                username: username,
+                content: content,
+                date: date
+            };
+            
+            // Add the new post to the array and save it back to localStorage
+            posts.push(newPost);
+            localStorage.setItem('forumPosts', JSON.stringify(posts));
+
+            // Clear the form inputs
+            document.getElementById('post-form').reset();
+            
+            // Update the displayed posts
+            displayPosts();
+        };
+
+        function displayPosts() {
+            const posts = JSON.parse(localStorage.getItem('forumPosts')) || [];
+            const postsDiv = document.getElementById('forum-posts');
+            postsDiv.innerHTML = '';
+
+            posts.forEach(post => {
+                postsDiv.innerHTML += `
+                    <div class="post">
+                        <h3>${post.username}</h3>
+                        <p>${post.content}</p>
+                        <small>${post.date}</small>
+                    </div>
+                `;
+            });
+        }
+
+        // Load posts on page load
+        displayPosts();
+
+    </script>
+
+</body>
+</html>

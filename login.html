@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mental Health Awareness India</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="handshake.png" alt="Website Logo">
+            </a>
+        </div>
+        <nav>
+            <ul id="nav-links">
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="self-help.html">Self-help</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="therapists.html">Therapists</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    </header>  
+
+    <!-- Login/Sign Up Section -->
+    <section id="auth">
+        <img src="handshake.png" alt="">
+        <h2 id="auth-title">Login</h2>
+        
+        <!-- Login Form -->
+        <div id="login-form">
+            <form action="/login" method="POST">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <button id="toggle-to-signup">Sign Up</button></p>
+        </div>
+        
+        <!-- Sign Up Form -->
+        <div id="sign-up-form" style="display: none;">
+            <form action="/sign-up" method="POST">
+                <label for="new-email">Email:</label>
+                <input type="email" id="new-email" name="new-email" required>
+                <label for="new-password">Password:</label>
+                <input type="password" id="new-password" name="new-password" required>
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+            <p>Already have an account? <button id="toggle-to-login">Login</button></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Mental Health Awareness India. All Rights Reserved.</p>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var navLinks = document.getElementById("nav-links");
+            if (navLinks.classList.contains("open")) {
+                navLinks.classList.remove("open");
+            } else {
+                navLinks.classList.add("open");
+            }
+        }
+
+        document.getElementById("toggle-to-signup").onclick = function() {
+            document.getElementById("login-form").style.display = "none";
+            document.getElementById("sign-up-form").style.display = "block";
+            document.getElementById("auth-title").textContent = "Sign Up";
+        };
+    
+        document.getElementById("toggle-to-login").onclick = function() {
+            document.getElementById("sign-up-form").style.display = "none";
+            document.getElementById("login-form").style.display = "block";
+            document.getElementById("auth-title").textContent = "Login";
+        };
+    </script>    
+
+</body>
+</html>

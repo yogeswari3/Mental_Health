@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mental Health Awareness India</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="handshake.png" alt="">
+            </a>
+        </div>
+        <nav>
+            <ul id="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="self-help.html">Self-help</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="therapists.html">Therapists</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    </header>    
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="overlay">
+            <div class="hero-content">
+                <h1>Welcome to Mental Health Awareness India</h1>
+                <p>Raising Awareness | Improving Accessibility | Building Support Networks</p>
+                <p>Join us in making a difference!</p>
+                <a href="resources.html" class="cta-button">Explore Resources</a>
+            </div>
+        </div>
+        <div class="background-slides"></div> <!-- New container for background slides -->
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources">
+        <h2>Educational Resources</h2>
+        <div class="articles">
+            <article>
+                <h3>Mental health refers to cognitive, behavioral, and emotional well-being</h3>
+            </article>
+            <article>
+                <h3>Conditions such as stress, depression, and anxiety can all affect one's mental health</h3>
+            </article>
+        </div>
+        <div class="articles">
+            <article>
+                <h3>We must help promote the mental well-being of individuals and address the needs of those with defined mental disorders</h3>
+            </article>
+            <article>
+                <h3>Around 1 in 5 children and adolescents in the world have a mental disorder</h3>
+            </article>
+        </div>
+        <div class="articles">
+            <article>
+                <h3>People with severe mental disorders die 10-20 years earlier than the general population</h3>
+            </article>
+            <article>
+                <h3>Rates of mental health workers can reach below 0.00002% of the population in low-income countries</h3>
+            </article>
+        </div>
+        <form action="resources.html"><button type="submit">Get More...</button></form>
+    </section>
+
+    <!-- Self-Help Tools Section -->
+    <section id="self-help">
+        <h2>Self-Help Tools</h2>
+        <p>Access our tools to help manage stress, anxiety, and mood fluctuations:</p>
+        <ul>
+            <li><a href="self-help.html#mood-tracker">Mood Tracker</a></li>
+            <li><a href="self-help.html#stress-management">Stress Management Exercises</a></li>
+            <li><a href="self-help.html#guided-meditation">Guided Meditation</a></li>
+        </ul>
+    </section>
+
+    <!-- Therapist Directory Section -->
+    <section id="therapist-directory">
+        <h2>Find a Mental Health Professional</h2>
+        <p>Search for certified therapists across India:</p>
+        <form>
+            <input type="text" placeholder="Search by name, location, or specialty">
+            <button type="submit">Search</button>
+        </form>
+    </section>
+
+    <!-- Forum Section -->
+    <section id="forums">
+        <h2>Peer Support Forum</h2>
+        <p>Join our community forum to share your experiences and receive support from others:</p>
+        <a href="forum.html">Join the Discussion</a>
+    </section>
+
+    <!-- Crisis Support Section -->
+    <section id="crisis-support">
+        <h2>Crisis Support</h2>
+        <p>If you need urgent help, reach out to one of the following helplines:</p>
+        <ul>
+            <li><a href="contact.html">Click Here</a></li>
+        </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Mental Health Awareness India. All Rights Reserved.</p>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </footer>
+
+    <!-- JavaScript for toggling the dropdown menu -->
+    <script>
+        function toggleMenu() {
+            var navLinks = document.getElementById("nav-links");
+            if (navLinks.classList.contains("open")) {
+                navLinks.classList.remove("open");
+            } else {
+                navLinks.classList.add("open");
+            }
+        }
+    </script>     
+
+</body>
+</html>

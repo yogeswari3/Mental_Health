@@ -36,7 +36,7 @@
         
         <!-- Login Form -->
         <div id="login-form">
-            <form action="index.html" method="POST">
+            <form>
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
                 <label for="password">Password:</label>
@@ -48,7 +48,7 @@
         
         <!-- Sign Up Form -->
         <div id="sign-up-form" style="display: none;">
-            <form action="login.html" method="POST">
+            <form>
                 <label for="new-email">Email:</label>
                 <input type="email" id="new-email" name="new-email" required>
                 <label for="new-password">Password:</label>
@@ -90,6 +90,23 @@
             document.getElementById("sign-up-form").style.display = "none";
             document.getElementById("login-form").style.display = "block";
             document.getElementById("auth-title").textContent = "Login";
+        };
+
+        document.getElementById('login-form').onsubmit = function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            // Perform your validation or actions here
+            // const email = document.getElementById('email').value;
+            // const password = document.getElementById('password').value;
+
+            // For example, redirect or show a message
+            // console.log(`Email: ${email}, Password: ${password}`);
+            // Redirect to index.html or handle accordingly
+            window.location.href = 'index.html';
+        };
+
+        document.getElementById('sign-up-form').onsubmit = function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            window.location.href = 'login.html';
         };
     </script>    
 

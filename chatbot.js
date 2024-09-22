@@ -2,36 +2,31 @@ function toggleChatWindow() {
     const chatContainer = document.getElementById('chatbot-container');
     if (chatContainer.style.display === 'none' || chatContainer.style.display === '') {
         chatContainer.style.display = 'flex';
+        inputField.focus();
     } else {
         chatContainer.style.display = 'none';
     }
 }
 
+const chatWindowScroll = document.getElementById('chat-window');
 const chatWindow = document.getElementById('chat-output');
 const inputField = document.getElementById('chat-input');
 const sendButton = document.getElementById('send-btn');
 
-const responses = {
-    greeting: "Hello! How can I assist you today?",
-    anxiety: "If you're feeling anxious, try deep breathing exercises. Want more tips?",
-    depression: "I'm sorry you're feeling this way. Consider talking to someone. Want some exercises?",
-    stress: "Feeling stressed? Would you like to try some stress-relief exercises?",
-    general: "I'm here for you. Ask me about stress, anxiety, or depression.",
-};
-
-function getBotResponse(input) {
-    input = input.toLowerCase();
-    
-    if (input.includes('hello') || input.includes('hi')) {
-        return responses.greeting;
-    } else if (input.includes('anxiety')) {
-        return responses.anxiety;
-    } else if (input.includes('depression')) {
-        return responses.depression;
-    } else if (input.includes('stress')) {
-        return responses.stress;
+function getBotResponse(userInput) {
+    // Add your logic to determine the response based on user input
+    if (userInput.includes("stress")) {
+        return "Feeling stressed? Would you like to try some stress-relief exercises? <a href='self-help.html#stress-management'>Click here</a>.";
+    } else if (userInput.includes("anxiety")) {
+        return "If you're feeling anxious, try deep breathing exercises. Want more tips? <a href='resources.html'>Click here</a>.";
+    } else if (userInput.includes("depression")) {
+        return "I'm sorry you're feeling this way. Consider talking to someone. Want some exercises? <a href='therapists.html'>Click here</a>.";
+    } else if (userInput.includes("happy")) {
+        return "That's great to hear! Keep spreading positivity!";
+    } else if (userInput.includes("sad")) {
+        return "I'm sorry to hear that. It's okay to feel sad sometimes. Join our forum and share your problem. <a href='forum.html'>Join here</a>.";
     } else {
-        return responses.general;
+        return "I'm here for you. What's your mood?<br>Happy, sad, anxiety, depression, stressed.";
     }
 }
 
@@ -45,10 +40,10 @@ sendButton.addEventListener('click', function() {
 
         const botMessage = document.createElement('div');
         botMessage.classList.add('bot-message');
-        botMessage.textContent = getBotResponse(userInput);
+        botMessage.innerHTML = getBotResponse(userInput);
         chatWindow.appendChild(botMessage);
 
-        chatWindow.scrollTop = chatWindow.scrollHeight;
+        chatWindowScroll.scrollTop = chatWindowScroll.scrollHeight;
         inputField.value = '';
     }
 });

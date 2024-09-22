@@ -836,7 +836,7 @@ footer ul li a:hover {
     right: 20px;
     width: 60px;
     height: 60px;
-    /* background-color: #007bff; */
+    background-color: #f4f7f9;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
@@ -901,6 +901,10 @@ footer ul li a:hover {
     padding: 10px;
     overflow-y: scroll;
     background-color: #f4f7f9;
+    background-image: url("images/handshake.png");
+    background-size: 65%;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
 }
 
 #chat-output {
@@ -917,7 +921,7 @@ footer ul li a:hover {
 
 .user-message {
     align-self: flex-end;
-    background-color: #4CAF50;
+    background-color: #555;
     color: white;
 }
 

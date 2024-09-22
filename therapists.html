@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mental Health Awareness India</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="chatbot.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -118,32 +117,31 @@
 
             // Sample data (replace this with actual data from a database or API)
             const therapists = [
-                { name: 'Dr. Anjali Mehta', location: 'Mumbai', specialty: 'Depression' },
-                { name: 'Dr. Vikram Patel', location: 'Delhi', specialty: 'Anxiety' },
-                { name: 'Dr. Neha Kumar', location: 'Bangalore', specialty: 'Child Therapy' },
-                { name: 'Dr. Aisha Khan', location: 'Hyderabad', specialty: 'Family Therapy' },
-                { name: 'Dr. Rajesh Singh', location: 'Pune', specialty: 'Addiction' },
-                { name: 'Dr. Priya Sharma', location: 'Kolkata', specialty: 'Stress Management' },
-                { name: 'Dr. Arvind Joshi', location: 'Chennai', specialty: 'Trauma Recovery' },
-                { name: 'Dr. Kavita Desai', location: 'Ahmedabad', specialty: 'Marriage Counseling' },
-                { name: 'Dr. Rakesh Gupta', location: 'Gurgaon', specialty: 'Cognitive Behavioral Therapy' },
-                { name: 'Dr. Sneha Nair', location: 'Thiruvananthapuram', specialty: 'Anxiety' },
-                { name: 'Dr. Manish Tandon', location: 'Lucknow', specialty: 'Depression' },
-                { name: 'Dr. Pooja Dutta', location: 'Chandigarh', specialty: 'Family Therapy' },
-                { name: 'Dr. Sameer Rao', location: 'Bhopal', specialty: 'Addiction' },
-                { name: 'Dr. Nisha Verma', location: 'Jaipur', specialty: 'Child Therapy' },
-                { name: 'Dr. Suresh Nair', location: 'Kochi', specialty: 'Trauma Recovery' },
-                { name: 'Dr. Suman Arora', location: 'Indore', specialty: 'Depression' },
-                { name: 'Dr. Abhay Kulkarni', location: 'Nagpur', specialty: 'Stress Management' },
-                { name: 'Dr. Shreya Das', location: 'Bhubaneswar', specialty: 'Marriage Counseling' },
-                { name: 'Dr. Sunil Rao', location: 'Mysore', specialty: 'Cognitive Behavioral Therapy' },
-                { name: 'Dr. Meera Iyer', location: 'Goa', specialty: 'Anxiety' },
-                { name: 'Dr. Harish Shetty', location: 'Patna', specialty: 'Depression' },
-                { name: 'Dr. Archana Bhat', location: 'Coimbatore', specialty: 'Family Therapy' },
-                { name: 'Dr. Amit Roy', location: 'Visakhapatnam', specialty: 'Addiction' },
-                { name: 'Dr. Ritu Sinha', location: 'Surat', specialty: 'Trauma Recovery' },
-                // Add more data here
-            ];
+            { name: 'Dr. Anjali Mehta', location: 'Mumbai', specialty: 'Depression', phone: '9876543210' },
+            { name: 'Dr. Vikram Patel', location: 'Delhi', specialty: 'Anxiety', phone: '9123456789' },
+            { name: 'Dr. Neha Kumar', location: 'Bangalore', specialty: 'Child Therapy', phone: '9823456710' },
+            { name: 'Dr. Aisha Khan', location: 'Hyderabad', specialty: 'Family Therapy', phone: '9876501234' },
+            { name: 'Dr. Rajesh Singh', location: 'Pune', specialty: 'Addiction', phone: '9123467890' },
+            { name: 'Dr. Priya Sharma', location: 'Kolkata', specialty: 'Stress Management', phone: '9812345678' },
+            { name: 'Dr. Arvind Joshi', location: 'Chennai', specialty: 'Trauma Recovery', phone: '9987654321' },
+            { name: 'Dr. Kavita Desai', location: 'Ahmedabad', specialty: 'Marriage Counseling', phone: '9123450987' },
+            { name: 'Dr. Rakesh Gupta', location: 'Gurgaon', specialty: 'Cognitive Behavioral Therapy', phone: '9876502341' },
+            { name: 'Dr. Sneha Nair', location: 'Thiruvananthapuram', specialty: 'Anxiety', phone: '9867543201' },
+            { name: 'Dr. Manish Tandon', location: 'Lucknow', specialty: 'Depression', phone: '9823450987' },
+            { name: 'Dr. Pooja Dutta', location: 'Chandigarh', specialty: 'Family Therapy', phone: '9123478601' },
+            { name: 'Dr. Sameer Rao', location: 'Bhopal', specialty: 'Addiction', phone: '9786543012' },
+            { name: 'Dr. Nisha Verma', location: 'Jaipur', specialty: 'Child Therapy', phone: '9823456701' },
+            { name: 'Dr. Suresh Nair', location: 'Kochi', specialty: 'Trauma Recovery', phone: '9987453210' },
+            { name: 'Dr. Suman Arora', location: 'Indore', specialty: 'Depression', phone: '9123458760' },
+            { name: 'Dr. Abhay Kulkarni', location: 'Nagpur', specialty: 'Stress Management', phone: '9812345098' },
+            { name: 'Dr. Shreya Das', location: 'Bhubaneswar', specialty: 'Marriage Counseling', phone: '9786543210' },
+            { name: 'Dr. Sunil Rao', location: 'Mysore', specialty: 'Cognitive Behavioral Therapy', phone: '9123470987' },
+            { name: 'Dr. Meera Iyer', location: 'Goa', specialty: 'Anxiety', phone: '9812345670' },
+            { name: 'Dr. Harish Shetty', location: 'Patna', specialty: 'Depression', phone: '9876504321' },
+            { name: 'Dr. Archana Bhat', location: 'Coimbatore', specialty: 'Family Therapy', phone: '9823456780' },
+            { name: 'Dr. Amit Roy', location: 'Visakhapatnam', specialty: 'Addiction', phone: '9123458765' },
+            { name: 'Dr. Ritu Sinha', location: 'Surat', specialty: 'Trauma Recovery', phone: '9876543201' }
+        ];
 
             // Filter results
             const results = therapists.filter(therapist => {
@@ -166,6 +164,7 @@
                         <h3>${therapist.name}</h3>
                         <p><strong>Location:</strong> ${therapist.location}</p>
                         <p><strong>Specialty:</strong> ${therapist.specialty}</p>
+                        <p><strong>Phone:</strong> ${therapist.phone}</p>
                     `;
                     resultsDiv.appendChild(resultDiv);
                 });
@@ -174,6 +173,7 @@
             }
         };
     </script>
+    <script src="chatbot.js"></script>    
 
 </body>
 </html>

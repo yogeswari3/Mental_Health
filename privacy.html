@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mental Health Awareness India</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="chatbot.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -122,5 +121,17 @@
             <li><a href="contact.html">Contact Us</a></li>
         </ul>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            var navLinks = document.getElementById("nav-links");
+            if (navLinks.classList.contains("open")) {
+                navLinks.classList.remove("open");
+            } else {
+                navLinks.classList.add("open");
+            }
+        }
+    </script>
+    <script src="chatbot.js"></script>    
 </body>
 </html>

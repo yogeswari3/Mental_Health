@@ -7,6 +7,7 @@
     <title>Mental Health Awareness India</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="chatbot.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -190,6 +191,24 @@
         </div>
     </section>    
     
+    <!-- Chatbot Icon and Container -->
+    <div id="chatbot-icon" onclick="toggleChatWindow()">
+        <img src="images/chat.png" alt="Chatbot Icon" />
+    </div>
+
+    <div id="chatbot-container">
+        <div id="chat-header">
+            <h4>Chat with Us</h4>
+            <button id="close-chat" onclick="toggleChatWindow()">×</button>
+        </div>
+        <div id="chat-window">
+            <div id="chat-output"></div>
+        </div>
+        <div id="chat-input-area">
+            <input id="chat-input" type="text" placeholder="Ask me anything..." />
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>

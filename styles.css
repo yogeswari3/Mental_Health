@@ -921,8 +921,8 @@ footer ul li a:hover {
 
 .user-message {
     align-self: flex-end;
-    background-color: #555;
-    color: white;
+    background-color: #888;
+    color: #f1f1f1;
 }
 
 .bot-message {
@@ -1092,6 +1092,11 @@ footer ul li a:hover {
     #chatbot-icon img {
         width: 30px;
         height: 30px;
+    }
+
+    .user-message, .bot-message {
+        padding: 5px 10px;
+        font-size: 12px;
     }
 }
 

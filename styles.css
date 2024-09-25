@@ -30,25 +30,29 @@ header {
     width: auto;
 }
 
-header nav ul {
+header nav ul,
+header navbar ul {
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
 }
 
-header nav ul li {
+header nav ul li,
+header navbar ul li {
     margin-left: 20px;
 }
 
-header nav ul li a {
+header nav ul li a,
+header navbar ul li a{
     color: #fff;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
-header nav ul li a:hover {
+header nav ul li a:hover,
+header navbar ul li a:hover {
     color: #ddd;
 }
 
@@ -1119,6 +1123,16 @@ footer ul li a:hover {
     .suicide-hotlines-body {
         width: 87%;
     }
+}
+
+@media (max-width: 400px) {
+    .hero h1 {
+        margin-top: 0px;
+    }
+    
+    .cta-button {
+        padding: 15px 15px;
+    }   
 }
 
 /* Animations */

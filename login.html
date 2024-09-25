@@ -12,21 +12,14 @@
     <header>
         <div class="logo">
             <a href="index.html">
-                <img src="handshake.png" alt="Website Logo">
+                <img src="handshake.png" alt="">
             </a>
         </div>
-        <nav>
+        <navbar>
             <ul id="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="self-help.html">Self-help</a></li>
-                <li><a href="forum.html">Forum</a></li>
-                <li><a href="therapists.html">Therapists</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="login.html">Login</a></li>
             </ul>
-        </nav>
-        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+        </navbar>
     </header>  
 
     <!-- Login/Sign Up Section -->
@@ -72,33 +65,12 @@
 
     <!-- Chatbot Icon and Container -->
     <div id="chatbot-icon" onclick="toggleChatWindow()">
+        <a href="login.html">
         <img src="images/chat.png" alt="Chatbot Icon" />
-    </div>
-
-    <div id="chatbot-container">
-        <div id="chat-header">
-            <h4>Chat with Us</h4>
-            <button id="close-chat" onclick="toggleChatWindow()">×</button>
-        </div>
-        <div id="chat-window">
-            <div id="chat-output"></div>
-        </div>
-        <div id="chat-input-area">
-            <input id="chat-input" type="text" placeholder="Ask me anything..." />
-            <button id="send-btn">Send</button>
-        </div>
+        </a>
     </div>
 
     <script>
-        function toggleMenu() {
-            var navLinks = document.getElementById("nav-links");
-            if (navLinks.classList.contains("open")) {
-                navLinks.classList.remove("open");
-            } else {
-                navLinks.classList.add("open");
-            }
-        }
-
         document.getElementById("toggle-to-signup").onclick = function() {
             document.getElementById("login-form").style.display = "none";
             document.getElementById("sign-up-form").style.display = "block";
@@ -120,7 +92,7 @@
             // For example, redirect or show a message
             // console.log(`Email: ${email}, Password: ${password}`);
             // Redirect to index.html or handle accordingly
-            window.location.href = 'index.html';
+            window.location.href = 'home.html';
         };
 
         document.getElementById('sign-up-form').onsubmit = function(event) {
@@ -128,7 +100,6 @@
             window.location.href = 'login.html';
         };
     </script>
-    <script src="chatbot.js"></script>
 
 </body>
 </html>

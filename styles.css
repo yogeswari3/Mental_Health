@@ -261,18 +261,24 @@ form button[type="submit"]:hover {
 
 /* Forum Section */
 #forums a,
-#therapist-directory a{
+#therapist-directory a,
+#self-help a,
+#crisis-support a{
     text-decoration: none;
     color: #4CAF50;
+    display: inline-block;
+    margin-bottom: 10px;
 }
 
 #forums a:hover,
-#therapist-directory a:hover{
+#therapist-directory a:hover,
+#self-help a:hover,
+#crisis-support a:hover{
     text-decoration: underline;
 }
 
 /* Crisis Support Section */
-ul {
+/* ul {
     list-style: none;
     padding: 0;
 }
@@ -292,7 +298,7 @@ ul li a {
 
 ul li a:hover {
     text-decoration: underline;
-}
+} */
 
 /* Footer Styles */
 footer {

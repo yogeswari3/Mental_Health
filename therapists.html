@@ -97,6 +97,7 @@
     </footer>
 
     <script>
+        // JavaScript for toggling the dropdown menu in navbar
         function toggleMenu() {
             var navLinks = document.getElementById("nav-links");
             if (navLinks.classList.contains("open")) {
@@ -106,6 +107,7 @@
             }
         }
 
+        // Filters and displays a list of therapists based on the user's input for name, location, and specialty
         document.getElementById('search-form').onsubmit = function(event) {
             event.preventDefault();
 
@@ -151,10 +153,11 @@
                 );
             });
 
-            // Display the results
+            // Clear previous results
             const resultsDiv = document.getElementById('results');
-            resultsDiv.innerHTML = ''; // Clear previous results
+            resultsDiv.innerHTML = ''; 
 
+            // If results are found, display each matching therapist
             if (results.length > 0) {
                 results.forEach(therapist => {
                     const resultDiv = document.createElement('div');

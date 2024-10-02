@@ -217,8 +217,8 @@
         </ul>
     </footer>
 
-    <!-- JavaScript for toggling the dropdown menu -->
     <script>
+        // JavaScript for toggling the dropdown menu in navbar
         function toggleMenu() {
             var navLinks = document.getElementById("nav-links");
             if (navLinks.classList.contains("open")) {
@@ -228,6 +228,7 @@
             }
         }
 
+        // On submitting the mood form, displays the mood in mood history and update the graph
         document.getElementById('mood-form').onsubmit = function(event) {
             event.preventDefault();
             const mood = document.getElementById('mood').value;
@@ -242,6 +243,7 @@
             updateMoodGraph();
         }
 
+        // Clears the mood history and update the graph
         document.getElementById('clear-history').addEventListener('click', function(event) {
             event.preventDefault(); // Prevent the default form submission
             localStorage.setItem('moodHistory', JSON.stringify([])); // Set moodHistory to an empty array
@@ -249,6 +251,7 @@
             updateMoodGraph();
         });
 
+        // to display the moods submitted through mood-form in mood history
         function displayMoodHistory() {
             let moodHistory = JSON.parse(localStorage.getItem('moodHistory')) || [];
             let moodHistoryDiv = document.getElementById('mood-history');
@@ -264,7 +267,7 @@
             }
         }
 
-        // Function to update the mood graph
+        // Function to update the mood graph based on the moods and the no. of occurances
         function updateMoodGraph() {
             let moodHistory = JSON.parse(localStorage.getItem('moodHistory')) || [];
             const moodCounts = { happy: 0, sad: 0, stressed: 0, anxious: 0, neutral: 0 };
@@ -315,6 +318,7 @@
 
         // Call displayMoodHistory on page load
         displayMoodHistory();
+        // Call updateMoodGraph on page load
         updateMoodGraph();
 
     </script>

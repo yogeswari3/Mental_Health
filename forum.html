@@ -90,6 +90,7 @@
     </footer>
 
     <script>
+        // JavaScript for toggling the dropdown menu in navbar
         function toggleMenu() {
             var navLinks = document.getElementById("nav-links");
             if (navLinks.classList.contains("open")) {
@@ -99,6 +100,7 @@
             }
         }
 
+        // If there are no posts, then a default post will be displayed
         window.onload = function() {
             // Check if 'forumPosts' exists in localStorage
             let posts = JSON.parse(localStorage.getItem('forumPosts'));
@@ -117,6 +119,7 @@
             displayPosts();
         };
 
+        // On submitting the post-form, a new post will be created and will be added to forum posts
         document.getElementById('post-form').onsubmit = function(event) {
             event.preventDefault();
             
@@ -145,6 +148,7 @@
             displayPosts();
         };
 
+        // Displays all the posts in forumPosts section
         function displayPosts() {
             const posts = JSON.parse(localStorage.getItem('forumPosts')) || [];
             const postsDiv = document.getElementById('forum-posts');

@@ -71,18 +71,22 @@
     </div>
 
     <script>
+        // to togglebetween login and signup
+        // opens singup if login is opened
         document.getElementById("toggle-to-signup").onclick = function() {
             document.getElementById("login-form").style.display = "none";
             document.getElementById("sign-up-form").style.display = "block";
             document.getElementById("auth-title").textContent = "Sign Up";
         };
     
+        // opens login if sigup is opened
         document.getElementById("toggle-to-login").onclick = function() {
             document.getElementById("sign-up-form").style.display = "none";
             document.getElementById("login-form").style.display = "block";
             document.getElementById("auth-title").textContent = "Login";
         };
 
+        // On submitting the login form, redirect to home page
         document.getElementById('login-form').onsubmit = function(event) {
             event.preventDefault(); // Prevent the default form submission
             // Perform your validation or actions here
@@ -95,6 +99,7 @@
             window.location.href = 'home.html';
         };
 
+        // On submitting the signup form, redirect to login page
         document.getElementById('sign-up-form').onsubmit = function(event) {
             event.preventDefault(); // Prevent the default form submission
             window.location.href = 'login.html';
